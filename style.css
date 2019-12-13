@@ -1,0 +1,17 @@
+/*
+Theme Name: EdxStarter
+Theme URI: 
+Author: Aaron Snowberger
+Author URI: https://aaron.kr/
+Description: This basic WordPress theme will introduce the very foundational concepts of theme building.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: edxstarter
+Tags: one-column, two-columns, right-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, tthreaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+body {
+	background: #f5efe0;
+}
