@@ -17,8 +17,36 @@
 get_header();
 ?>
 
-<main>
-	<h2>Site Content</h2>
+<main class="site-content" id="page">
+
+	<?php
+	if ( have_posts() ) :
+
+		while ( have_posts() ) :
+
+			the_post();
+
+	?>
+	<article class="entry-content post-<?php echo esc_attr( get_the_ID() ); ?>">
+		<?php
+
+			the_title( '<h1 class="post-title"><span>', '</span></h1>' );
+			if ( has_post_thumbnail() ) {
+				echo '<div class="post-featured-image">';
+				the_post_thumbnail();
+				echo '</div>';
+			}
+			the_content();
+		?>
+	</article>	
+
+	<?php
+
+		endwhile;
+
+	endif;
+	?>
+
 </main>
 
 <?php

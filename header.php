@@ -28,7 +28,7 @@
 
 	<?php wp_body_open(); ?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'edxstarter' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'edxstarter' ); ?></a>
 
 		<header id="site-header" class="header-footer-group" role="banner">
 

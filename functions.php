@@ -13,7 +13,9 @@
  * Enqueues the Stylesheet for EdxStarter.
  */
 function edxstarter_enqueue_scripts() {
-	wp_enqueue_style( 'edxstarter-style', get_template_directory_uri() . '/style.css', array(), '20121213' );
+	wp_enqueue_style( 'edxstarter-style', get_template_directory_uri() . '/style.css', array(), '20191213' );
+
+	wp_enqueue_style( 'edxstarter-google-fonts', 'https://fonts.googleapis.com/css?family=Bebas+Neue|Crimson+Text:400,400i,600,600i,700,700i|Oswald:200,300,400,500,600,700', array(), '20200124' );
 }
 add_action( 'wp_enqueue_scripts', 'edxstarter_enqueue_scripts' );
 
