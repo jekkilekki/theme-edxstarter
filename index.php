@@ -17,6 +17,9 @@
 get_header();
 ?>
 
-<h1 class="site-title">Starter Theme</h1>
+<main>
+	<h2>Site Content</h2>
+</main>
 
 <?php
+get_footer();
