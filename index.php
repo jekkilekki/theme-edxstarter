@@ -26,21 +26,41 @@ get_header();
 
 			the_post();
 
-	?>
-	<article class="entry-content post-<?php echo esc_attr( get_the_ID() ); ?>">
-		<?php
+			?>
+		<article class="post-<?php echo esc_attr( get_the_ID() ); ?>">
 
-			the_title( '<h1 class="post-title"><span>', '</span></h1>' );
-			if ( has_post_thumbnail() ) {
-				echo '<div class="post-featured-image">';
-				the_post_thumbnail();
-				echo '</div>';
+			<header class="post-header">
+
+				<a class="post-title-link" href="' . esc_url( get_the_permalink() ) . '">
+					<?php the_title( '<h1 class="post-title"><span>', '</span></h1>' ); ?>
+				</a>
+
+			</header>
+
+			<div class="entry-content container">
+
+			<?php if ( has_post_thumbnail() ) { ?>
+
+				<a class="post-featured-image" href="' . esc_url( get_the_permalink() ) . '">
+					<?php the_post_thumbnail(); ?>
+				</a>
+
+				<?php
 			}
-			the_content();
-		?>
-	</article>	
 
-	<?php
+			if ( is_category() || is_archive() ) {
+				the_excerpt();
+			} else {
+				the_content();
+			}
+
+			?>
+
+			</div><!-- .entry-content .container -->
+
+		</article>	
+
+			<?php
 
 		endwhile;
 

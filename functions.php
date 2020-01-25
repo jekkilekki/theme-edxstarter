@@ -15,7 +15,7 @@
 function edxstarter_enqueue_scripts() {
 	wp_enqueue_style( 'edxstarter-style', get_template_directory_uri() . '/style.css', array(), '20191213' );
 
-	wp_enqueue_style( 'edxstarter-google-fonts', 'https://fonts.googleapis.com/css?family=Bebas+Neue|Crimson+Text:400,400i,600,600i,700,700i|Oswald:200,300,400,500,600,700', array(), '20200124' );
+	wp_enqueue_style( 'edxstarter-google-fonts', 'https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:100,200,300,400,500,600,700,800,900|Crimson+Text:400,400i,600,600i,700,700i|Oswald:200,300,400,500,600,700', array(), '20200124' );
 }
 add_action( 'wp_enqueue_scripts', 'edxstarter_enqueue_scripts' );
 
@@ -137,6 +137,18 @@ function edxstarter_menus() {
 add_action( 'init', 'edxstarter_menus' );
 
 /**
+ * Fallback if the Header Menu isn't set.
+ */
+function custom_primary_menu_fallback() {
+	?>
+	<ul id="menu">
+		<li><a href="/">Home</a></li>
+		<li><a href="/wp-admin/nav-menus.php">Set primary menu</a></li>
+	</ul>
+	<?php
+}
+
+/**
  * Register widget areas.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -178,3 +190,18 @@ function edxstarter_sidebar_registration() {
 }
 
 add_action( 'widgets_init', 'edxstarter_sidebar_registration' );
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function edxstarter_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+			$more = '<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">&ctdot;</a>';
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'edxstarter_excerpt_more' );

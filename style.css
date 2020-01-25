@@ -93,19 +93,22 @@ table {
 	box-sizing: border-box;
 	position: relative;
 	max-width: 100%;
+	transition: all 0.25s;
 }
 
-.site-content {
-	padding: 5rem;
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 /* -------------------------------------------------------------------------- */
 /*	2. Typograhpy & Element Base
 /* -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Bebas Neue", Oswald, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: /* Montserrat, */ "Bebas Neue", Oswald, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	/* font-weight: bold; */
 	color: #333333;
+	text-transform: uppercase;
 }
 
 h1 { font-size: 5rem; }
@@ -113,13 +116,38 @@ h2 { font-size: 4rem; }
 h3 { font-size: 3rem; }
 h4 { font-size: 2rem; }
 h5 { font-size: 1rem; }
-h6 { font-size: 1rem; letter-spacing: 5px; border-bottom: 1px solid; }
+h6 { font-size: 1rem; 
+	letter-spacing: 5px; border-bottom: 1px solid; 
+}
 
 body {
 	font-family: "Crimson Text", Georgia, 'Times New Roman', Times, serif;
 	font-size: 18pt;
 	line-height: 1.3;
 	color: #555555;
+}
+
+body.custom-background {
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+	color: #333333;
+	transition: all 0.5s;
+}
+
+body.custom-background a {
+	color: #999999;
+}
+
+a:focus,
+a:active,
+a:hover {
+	border-color: magenta;
+	border-width: 3px;
+	color: magenta;
 }
 
 p, ul, ol {
@@ -150,19 +178,168 @@ img {
 	filter: gray;
 	filter: grayscale( 100% );
 	transition: all 1s;
+	padding: 10px;
+	border: 1px solid #333333;
 }
 
 img:hover {
 	filter: grayscale( 0% );
+	border-color: magenta;
+	border-width: 3px;
+	max-width: calc( 100% + 4px );
+	margin-top: -2px;
 }
 
 /* -------------------------------------------------------------------------- */
 /*	3. Helper Classes
 /* -------------------------------------------------------------------------- */
+/* Screen Reader Text ------------------------ */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	-webkit-clip-path: none;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	right: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+
+/* Skip Link --------------------------------- */
+
+.skip-link {
+	left: -9999rem;
+	top: 2.5rem;
+	z-index: 999999999;
+	text-decoration: underline;
+}
+
+.skip-link:focus {
+	display: block;
+	left: 6px;
+	top: 7px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	z-index: 100000;
+	right: auto;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	4. Site Header
 /* -------------------------------------------------------------------------- */
+.site-header a,
+.site-logo a,
+.site-title a,
+.site-admin-link {
+	text-decoration: none;
+	border: none;
+}
+
+.site-admin-link {
+	font-family: Montserrat;
+	font-size: 0.8rem;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.site-title {
+	line-height: 1;
+}
+
+.site-description {
+	margin-bottom: 0;
+}
+
+.site-header-top {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 1rem 0;
+	background: rgba(0,0,0,0.7);
+}
+
+.site-header-top-left {
+	text-align: left;
+	padding-left: 3rem;
+}
+
+.site-header-top-center {
+	text-align: center;
+}
+
+.site-header-top-right {
+	text-align: right;
+	padding-right: 3rem;
+}
+
+.main-navigation-wrapper {
+	border-top: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	background: black;
+}
+
+.header-menu {
+	margin: 0 auto;
+	text-align: center;
+	padding: 0.75rem 0 1rem;
+	line-height: 1;
+}
+
+.header-menu li {
+	display: inline-block;
+	list-style: none;
+	line-height: 1;
+}
+
+.header-menu a {
+	font-family: Montserrat, "Bebas Neue";
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 400;
+	border: none;
+}
+
+/* .header-menu a:after {
+	width: 70%;
+	content: '';
+	height: 3px;
+	background: white;
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px magenta;
+} */
 
 /* -------------------------------------------------------------------------- */
 /*	5. Entry Content
@@ -170,6 +347,16 @@ img:hover {
 .entry-content {
 	margin-bottom: 5rem;
 	clear: both;
+}
+
+a.read-more {
+	background: #333333;
+	color: white;
+	text-decoration: none;
+	padding: 0 10px;
+	border-radius: 50px;
+	margin-left: 5px;
+	font-size: 1.3rem;
 }
 
 /* https://css-tricks.com/line-on-sides-headers/ */
@@ -183,7 +370,13 @@ img:hover {
 
 .post-title span {
   display: inline-block;
-  position: relative;  
+	position: relative;
+	font-weight: 100;
+	transition: all 0s;
+	/* background: #333333;
+	color: white;
+	padding: 10px 20px 0;
+	border-radius: 20px; */
 }
 
 .post-title span:before,
@@ -191,9 +384,9 @@ img:hover {
   content: "";
   position: absolute;
   height: 10px;
-  border-bottom: 1px solid #333333;
-  border-top: 2px solid #333333;
-  top: 2rem;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  top: 2.4rem;
   width: 600px;
 }
 
@@ -207,6 +400,32 @@ img:hover {
   margin-left: 15px;
 }
 
+.post-title:hover span,
+.post-title:active span,
+.post-title:focus span {
+	color: magenta;
+	cursor: pointer;
+	font-weight: 400;
+}
+
+.post-title:hover span:before,
+.post-title:hover span:after,
+.post-title:active span:before,
+.post-title:active span:after,
+.post-title:focus span:before,
+.post-title:focus span:after {
+	border-color: magenta;
+	border-width: 3px;
+}
+
+article {
+	clear: both;
+}
+
+article:hover .entry-content {
+	
+}
+
 .post-featured-image {
 	text-align: center;
 }
@@ -217,6 +436,15 @@ img:hover {
 	border: 1px solid #333333;
 	width: 100%;
 	height: auto;
+}
+
+.post-featured-image img:hover,
+.post-featured-image img:active,
+.post-featured-image img:focus {
+	border-color:magenta;
+	border-width: 3px;
+	margin-top: -2px;
+	max-width: calc( 100% + 4px );
 }
 
 /* -------------------------------------------------------------------------- */
