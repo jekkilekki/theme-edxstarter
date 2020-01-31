@@ -13,9 +13,13 @@
  * Enqueues the Stylesheet for EdxStarter.
  */
 function edxstarter_enqueue_scripts() {
+
 	wp_enqueue_style( 'edxstarter-style', get_template_directory_uri() . '/style.css', array(), '20191213' );
 
 	wp_enqueue_style( 'edxstarter-google-fonts', 'https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat:100,200,300,400,500,600,700,800,900|Crimson+Text:400,400i,600,600i,700,700i|Oswald:200,300,400,500,600,700', array(), '20200124' );
+
+	wp_enqueue_style( 'edxstarter-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', array(), '20200127' );
+
 }
 add_action( 'wp_enqueue_scripts', 'edxstarter_enqueue_scripts' );
 
@@ -205,3 +209,9 @@ function edxstarter_excerpt_more( $more ) {
 	return $more;
 }
 add_filter( 'excerpt_more', 'edxstarter_excerpt_more' );
+
+/**
+ * REQUIRED FILES
+ * Include required files.
+ */
+require get_template_directory() . '/template-tags.php';

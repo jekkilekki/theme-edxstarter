@@ -101,6 +101,26 @@ table {
 	margin: 0 auto;
 }
 
+.site-content {
+	padding-top: 3.6rem;
+	background: rgb(245);
+	background: linear-gradient(90deg, rgba(245,245,245,0.8) 0%, rgba(245,245,245,0.8) 20%, rgba(245,245,245,0.8) 80%, rgba(245,245,245,0.8) 100%);
+}
+
+.site-content .container {
+	display: flex;
+}
+
+.site-articles-list {
+	width: 70%;
+}
+
+#sidebar,
+.sidebar {
+	width: 30%;
+	padding-left: 2rem;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	2. Typograhpy & Element Base
 /* -------------------------------------------------------------------------- */
@@ -128,7 +148,7 @@ body {
 }
 
 body.custom-background {
-	color: white;
+	/* color: white; */
 }
 
 a {
@@ -139,15 +159,15 @@ a {
 }
 
 body.custom-background a {
-	color: #999999;
+	/* color: #999999; */
 }
 
 a:focus,
 a:active,
 a:hover {
-	border-color: magenta;
+	border-color: #CA28DA;
 	border-width: 3px;
-	color: magenta;
+	color: #CA28DA;
 }
 
 p, ul, ol {
@@ -184,7 +204,7 @@ img {
 
 img:hover {
 	filter: grayscale( 0% );
-	border-color: magenta;
+	border-color: #CA28DA;
 	border-width: 3px;
 	max-width: calc( 100% + 4px );
 	margin-top: -2px;
@@ -264,6 +284,7 @@ img:hover {
 .site-admin-link {
 	text-decoration: none;
 	border: none;
+	color: #999999;
 }
 
 .site-admin-link {
@@ -271,14 +292,29 @@ img:hover {
 	font-size: 0.8rem;
 	line-height: 1;
 	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.site-header a:hover,
+.site-header a:focus,
+.site-header a:active,
+.site-admin-link:hover,
+.site-admin-link:focus,
+.site-admin-link:active {
+	color: #cccccc;
 }
 
 .site-title {
 	line-height: 1;
 }
 
+.site-title a {
+	color: white!important;
+}
+
 .site-description {
 	margin-bottom: 0;
+	color: #555555;
 }
 
 .site-header-top {
@@ -309,16 +345,23 @@ img:hover {
 }
 
 .header-menu {
-	margin: 0 auto;
 	text-align: center;
-	padding: 0.75rem 0 1rem;
+	margin: 0 auto;
 	line-height: 1;
 }
 
 .header-menu li {
 	display: inline-block;
+	border-left: 1px solid #333333;
 	list-style: none;
 	line-height: 1;
+	padding: 0.75rem .5rem 1rem;
+	text-align: center;
+	margin: 0;
+}
+
+.header-menu li:last-child {
+	border-right: 1px solid #333333;
 }
 
 .header-menu a {
@@ -328,6 +371,13 @@ img:hover {
 	text-transform: uppercase;
 	font-weight: 400;
 	border: none;
+	color: #999999;
+}
+
+.header-menu a:hover,
+.header-menu a:focus,
+.header-menu a:active {
+	color: #cccccc;
 }
 
 /* .header-menu a:after {
@@ -338,16 +388,39 @@ img:hover {
 	display: block;
 	margin: 0 auto;
 	border-radius: 5px;
-	box-shadow: 0px 0px 10px magenta;
+	box-shadow: 0px 0px 10px #CA28DA;
 } */
 
 /* -------------------------------------------------------------------------- */
 /*	5. Entry Content
 /* -------------------------------------------------------------------------- */
-.entry-content {
+.entry {
+	clear: both;
+	max-width: 100%;
+	overflow: hidden;
+	background: #ffffff;
+	margin-bottom: 1.6rem;
+	border-radius: 5px;
+}
+
+.entry:hover {
+	background: #fff9ff;
+	box-shadow: 5px 5px 40px rgba(0,0,0,0.32);
+}
+
+.entry-header,
+.entry-content,
+.entry-footer {
+	padding: 0 2.6rem;
+}
+
+/* .entry-content-archive {
 	margin-bottom: 5rem;
 	clear: both;
-}
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 3rem;
+} */
 
 a.read-more {
 	background: #333333;
@@ -360,12 +433,27 @@ a.read-more {
 }
 
 /* https://css-tricks.com/line-on-sides-headers/ */
-.post-title {
-  line-height: 1;
-	text-align: center;
-	margin: 3.6rem -5rem;
+.entry-title {
+  /* line-height: 1;
+	margin: 0 -5rem 2rem;
 	max-width: calc(100% + 10rem);
+	overflow: hidden; */
+	font-size: 2rem;
+	margin: 1.6rem 0 0.6rem;
+}
+
+.entry-title a {
+	border: none;
+	color: #333333;
+	white-space: nowrap;
+}
+
+.entry-title a:after {
+	content: '/ / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /';
+	color: #eeeeee;
+	margin-left: 0.6rem;
 	overflow: hidden;
+	white-space: nowrap;
 }
 
 .post-title span {
@@ -373,20 +461,21 @@ a.read-more {
 	position: relative;
 	font-weight: 100;
 	transition: all 0s;
+	font-size: 1.6rem;
 	/* background: #333333;
 	color: white;
 	padding: 10px 20px 0;
 	border-radius: 20px; */
 }
 
-.post-title span:before,
+/* .post-title span:before,
 .post-title span:after {
   content: "";
   position: absolute;
   height: 10px;
   border-bottom: 1px solid;
   border-top: 1px solid;
-  top: 2.4rem;
+  top: 16px;
   width: 600px;
 }
 
@@ -398,12 +487,12 @@ a.read-more {
 .post-title span:after {
   left: 100%;
   margin-left: 15px;
-}
+} */
 
 .post-title:hover span,
 .post-title:active span,
 .post-title:focus span {
-	color: magenta;
+	color: #CA28DA;
 	cursor: pointer;
 	font-weight: 400;
 }
@@ -414,37 +503,107 @@ a.read-more {
 .post-title:active span:after,
 .post-title:focus span:before,
 .post-title:focus span:after {
-	border-color: magenta;
+	border-color: #CA28DA;
 	border-width: 3px;
 }
 
-article {
-	clear: both;
+.post-header {
+	border-top: 3px solid #CA28DA;
 }
 
-article:hover .entry-content {
-	
+.published.original-date {
+	display: none;
+}
+
+.post-featured-image-link {
+	border: 0;
 }
 
 .post-featured-image {
 	text-align: center;
+	height: 260px;
+	width: 100%;
+	background-size: cover!important;
+	background-position: center!important;
+	filter: grayscale(60%);
 }
 
-.post-featured-image img {
-	margin: 0 auto 1.8rem;
+.entry:hover .post-featured-image,
+.entry:active .post-featured-image,
+.entry:focus .post-featured-image {
+	filter:grayscale(0);
+}
+
+/* .post-featured-image img {
+	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid #333333;
 	width: 100%;
 	height: auto;
-}
+} */
 
 .post-featured-image img:hover,
 .post-featured-image img:active,
 .post-featured-image img:focus {
-	border-color:magenta;
+	border-color:#CA28DA;
 	border-width: 3px;
 	margin-top: -2px;
 	max-width: calc( 100% + 4px );
+}
+
+.entry-footer {
+	padding-bottom: 1.6rem;
+}
+
+.entry-meta {
+	font-family: "Bebas Neue", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 1.2rem;
+}
+
+.entry-meta > span {
+	padding-right: 1rem;
+}
+
+.entry-meta a {
+	border-bottom: none;
+	color: #555555;
+}
+
+.entry-meta .cat-links a,
+.entry-meta .cat-links {
+	color: #CA28DA;
+}
+
+.entry-meta .fas {
+	margin-right: 6px;
+	font-size: 0.9rem;
+	opacity: 0.4;
+	top: -2px;
+}
+
+.entry-meta .author-avatar {
+	position: absolute;
+	right: -1rem;
+	bottom: 0;
+}
+
+.entry-meta .author-avatar img {
+	border: 0;
+	padding: 0;
+	position: relative;
+}
+
+.entry-meta .author-avatar:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-top: 96px solid white;
+	border-right: 96px solid transparent;
+	width: 1px;
+	height: 1px;
+	display: block;
+	z-index: 10;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -458,6 +617,18 @@ article:hover .entry-content {
 /* -------------------------------------------------------------------------- */
 /*	8. Archives
 /* -------------------------------------------------------------------------- */
+.page-title {
+	font-size: 1.6rem;
+	border-top: 2px solid #aaaaaa;
+	border-bottom: 2px solid #aaaaaa;
+	padding: 4px 0.6rem 0px;
+	margin: 0 0 1.6rem;
+	color: #555555;
+}
+
+.page-description {
+
+}
 
 /* -------------------------------------------------------------------------- */
 /*	9. Error 404
