@@ -197,6 +197,14 @@ a:hover {
 	color: var(--purpleAccent);
 }
 
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: oblique;
+}
+
 p, ul, ol {
 	margin-bottom: 1.8rem;
 }
@@ -230,28 +238,17 @@ img {
 	border-color: var(--blackBody);
 }
 
+img.emoji {
+	filter: grayscale( 0% );
+}
+
 img:hover {
 	filter: grayscale( 0% );
 	border-color: #CA28DA;
 	border-color: var(--purpleAccent);
-	border-width: 3px;
+	/* border-width: 3px;
 	max-width: calc( 100% + 4px );
-	margin-top: -2px;
-}
-
-input.search-field {
-	color: #999999;
-	border: 1px solid #999999;
-	border-radius: 10px;
-	padding: 0.5rem 1rem;
-	background: rgba(15,7,22,0.7);
-	border-color: #333333;
-	font-family: Montserrat;
-	font-size: 0.8rem;
-}
-
-input.search-submit {
-	display: none;
+	margin-top: -2px; */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -777,6 +774,146 @@ a.read-more:focus {
 /* -------------------------------------------------------------------------- */
 /*	10. Widgets
 /* -------------------------------------------------------------------------- */
+#sidebar h2 {
+	font-size: 1.6rem;
+	line-height: 1.3;
+	border-top: 2px solid #aaaaaa;
+	border-bottom: 2px solid #aaaaaa;
+	border-color: var(--blackLight1);
+	padding: 4px 0.6rem 0px;
+	margin: 0 0 1.6rem;
+	color: #555555;
+	color: var(--blackBase);
+}
+
+#sidebar ul {
+	margin: 0;
+}
+
+#sidebar ul > li {
+	list-style: none;
+	margin-left: 1.2rem;
+}
+
+#sidebar li > h2 {
+	margin-top: 1.8rem;
+}
+
+#sidebar li {
+	font-family: Montserrat;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+	line-height: 2;
+	border: none;
+	/* padding-bottom: 3px; */
+	text-transform: uppercase;
+}
+
+.widget-content {
+	padding: 0 0 1.6rem;
+	margin: 0 0 1.6rem;
+}
+
+.widget-content img {
+	object-fit: cover;
+  object-position: center;
+}
+
+/* Search */
+input.search-field,
+select {
+	border: 1px solid #999999;
+	border-radius: 10px;
+	padding: 0.5rem 1rem;
+	background: rgba(255,255,255,0.7);
+	font-family: Montserrat;
+	font-size: 0.8rem;
+}
+
+#site-header input.search-field {
+	background: rgba(15,7,22,0.7);
+	border-color: #333333;
+	color: #999999;
+}
+
+input.search-submit {
+	display: none;
+}
+
+/* Recent Comments */
+li.recentcomments,
+.widget_rss li {
+	font-family: "Crimson Text", serif!important;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dashed #999999!important;
+	padding: 0 1rem 1rem!important;
+	margin-left: 0!important;
+	text-transform: none!important;
+	font-size: 1rem!important;
+	line-height: 1.3!important;
+	letter-spacing: 0!important;
+}
+
+li.recentcomments a,
+.widget_rss li a {
+	color: var(--purpleAccent);
+}
+
+li.recentcomments .comment-author-link a {
+	color: var(--blackBase);
+}
+
+/* RSS Widget */
+.rss-widget-icon {
+	float: right;
+	top: 6px;
+}
+
+.widget_rss .rss-date,
+.widget_rss cite {
+	display: block;
+	padding: 0.5rem 0;
+	font-weight: bold;
+}
+
+/* Text Widget */
+.widget_text p {
+	font-size: 1rem;
+}
+
+/* Calendar */
+.widget_calendar table {
+	width: 100%;
+	font-size: 1rem;
+	text-align: center;
+}
+
+.widget_calendar caption {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: Montserrat;
+	padding-bottom: 0.5rem;
+}
+
+.widget_calendar th,
+.widget_calendar td {
+	padding: 0.5rem;
+}
+
+.widget_calendar th,
+.widget_calendar thead {
+	font-size: bold!important;
+}
+
+.widget_calendar #prev {
+	text-align: left;
+}
+
+.widget_calendar #next {
+	text-align: right;
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*	11. Site Footer
