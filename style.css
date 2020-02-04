@@ -104,17 +104,17 @@ img {
 /*	1. Document Setup (Layout)
 /* -------------------------------------------------------------------------- */
 html {
-	font-size: 62.5%; /* 1rem = 10px */
+	font-size: 62.5%; /* 1rem = 10px @link https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97/ */
 	scroll-behavior: smooth;
 }
 
 body {
-	/* background: #f5efe0;
-	color: #000;
-	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	background: #232323;
+	color: #d5d5d5;
+	font-family: "PT Sans Serif", "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 1.8rem;
 	letter-spacing: -0.015em;
-	text-align: left; */
+	text-align: left;
 }
 
 *,
@@ -204,6 +204,11 @@ path {
 	right: auto;
 }
 
+.container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	2. 	Element Base (Typography)
 /* -------------------------------------------------------------------------- */
@@ -216,10 +221,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.faux-heading {
-	font-feature-settings: "lnum";
-	font-variant-numeric: lining-nums;
+h6 {
 	font-weight: 700;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
@@ -371,7 +373,7 @@ hr.styled-separator::after {
 }
 
 a {
-	color: #cd2653;
+	color: #cf00ff;
 	text-decoration: underline;
 }
 
@@ -380,9 +382,7 @@ a:focus {
 	text-decoration: none;
 }
 
-
 /* Lists ------------------------------------- */
-
 ul,
 ol {
 	margin: 0 0 3rem 3rem;
@@ -450,7 +450,6 @@ dd + dt {
 	margin-top: 1.5rem;
 }
 
-
 /* Quotes ------------------------------------ */
 
 blockquote {
@@ -484,9 +483,7 @@ blockquote p:last-child {
 	margin: 0;
 }
 
-
 /* Code -------------------------------------- */
-
 code,
 kbd,
 pre,
@@ -517,9 +514,7 @@ pre code {
 	padding: 0;
 }
 
-
 /* Media ------------------------------------- */
-
 figure {
 	display: block;
 	margin: 0;
@@ -563,9 +558,7 @@ iframe.instagram-media {
 	margin: auto !important;
 }
 
-
 /* GALLERIES */
-
 .gallery {
 	display: flex;
 	flex-wrap: wrap;
@@ -584,9 +577,7 @@ iframe.instagram-media {
 	margin-top: 0.8em;
 }
 
-
 /* Inputs ------------------------------------ */
-
 fieldset {
 	border: 0.2rem solid #dcd7ca;
 	padding: 2rem;
@@ -813,7 +804,6 @@ input[type="search"]:focus {
 }
 
 /* Tables ------------------------------------ */
-
 table {
 	border: 0.1rem solid #dcd7ca;
 	border-collapse: collapse;

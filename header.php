@@ -26,7 +26,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
+		<header id="masthead" class="<?php echo is_singular() ? 'site-header featured-image' : 'site-header'; ?>">
 
 			<div class="site-header-top">
 				<div class="site-header-top-left">

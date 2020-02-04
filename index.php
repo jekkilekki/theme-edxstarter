@@ -17,7 +17,45 @@
 get_header();
 ?>
 
-<h1>EdxStarter Theme</h1>
+<main id="site-content" class="page">
+
+	<?php
+	if ( have_posts() ) {
+
+		while( have_posts() ) {
+
+			the_post();
+			?>
+
+			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+				<div class="container">
+
+			<?php
+
+				if ( is_singular() ) {
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				} else {
+					the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
+				}
+
+				if ( is_singular() ) {
+					the_content();
+				} else {
+					the_excerpt();
+				}
+
+			?>
+				</div>
+
+			</article>
+
+			<?php
+		}
+	}
+	?>
+
+</main>
 
 <?php
 get_sidebar();
