@@ -9,10 +9,141 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: edxstarter
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-body {
-	background: #333333;
-	color: white;
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	CSS Reset
+	1. 	Document Setup (Layout)
+	2. 	Element Base (Typography)
+	3. 	Helper Classes (Screen Reader Text)
+	4. 	Site Header
+	5.  Post: Archive (index.php)
+	6.  Post: Single (index.php - conditionals)
+	7.  Entry Content
+	8.  Comments
+	9.  Site Pagination
+	10. Error 404 / Search
+	11. Widgets
+	12. Site Footer
+
+----------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+/*	0. CSS Reset
+/* -------------------------------------------------------------------------- */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	position: relative;
+	box-sizing: border-box; /* Box Model */
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img {
+	display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/*	1. Document Setup (Layout)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	2. 	Element Base (Typography)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	3. 	Helper Classes (Screen Reader Text)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	4. 	Site Header
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	5.  Post: Archive (index.php)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	6.  Post: Single (index.php - conditionals)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	7.  Entry Content
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	8.  Comments
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	9.  Site Pagination
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	10. Error 404 / Search
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	11. Widgets
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*	12. Site Footer
+/* -------------------------------------------------------------------------- */
