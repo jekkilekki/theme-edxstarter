@@ -55,6 +55,20 @@ get_header();
 	}
 	?>
 
+	<div class="pagination">
+				
+	<?php
+	the_posts_pagination(
+		array(
+			'prev_text'          => '<i class="fas fa-caret-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'edxstarter' ) . '</span>',
+			'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'edxstarter' ) . '</span><i class="fas fa-caret-right"></i>',
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'edxstarter' ) . ' </span>',
+		)
+	);
+	?>
+
+	</div>
+	
 </main>
 
 <?php
