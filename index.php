@@ -22,53 +22,54 @@ get_header();
 	<?php
 	if ( have_posts() ) {
 
-		while( have_posts() ) {
+		while ( have_posts() ) {
 
 			the_post();
 			?>
 
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-				<div class="container">
+				<div class="container entry-content">
+
+					<?php
+
+					if ( is_singular() ) {
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					} else {
+						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
+					}
+
+					if ( is_singular() ) {
+						the_content();
+					} else {
+						the_excerpt();
+					}
+
+					?>
+
+				</div><!-- .entry-content -->
+
+			</article><!-- .post-ID -->
 
 			<?php
-
-				if ( is_singular() ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				} else {
-					the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
-				}
-
-				if ( is_singular() ) {
-					the_content();
-				} else {
-					the_excerpt();
-				}
-
-			?>
-				</div>
-
-			</article>
-
-			<?php
-		}
-	}
+		} // endwhile
+	} // endif
 	?>
 
 	<div class="pagination">
-				
-	<?php
-	the_posts_pagination(
-		array(
-			'prev_text'          => '<i class="fas fa-caret-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'edxstarter' ) . '</span>',
-			'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'edxstarter' ) . '</span><i class="fas fa-caret-right"></i>',
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'edxstarter' ) . ' </span>',
-		)
-	);
-	?>
+
+		<?php
+		the_posts_pagination(
+			array(
+				'prev_text'          => '<i class="fas fa-caret-left"></i><span class="screen-reader-text">' . __( 'Previous page', 'edxstarter' ) . '</span>',
+				'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'edxstarter' ) . '</span><i class="fas fa-caret-right"></i>',
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'edxstarter' ) . ' </span>',
+			)
+		);
+		?>
 
 	</div>
-	
+
 </main>
 
 <?php

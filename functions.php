@@ -45,10 +45,10 @@ function edxstarter_theme_support() {
 	);
 
 	// Set content-width.
-	// global $content_width;
-	// if ( ! isset( $content_width ) ) {
-	// 	$content_width = 580;
-	// }
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* Sidebar: 320px - margin: 40px */
+	}
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -184,7 +184,7 @@ add_action( 'wp_print_footer_scripts', 'edxstarter_skip_link_focus_fix' );
 function edxstarter_menus() {
 
 	$locations = array(
-		'main'    => __( 'Main Top Menu', 'edxstarter' ),
+		'header'  => __( 'Main Top Menu', 'edxstarter' ),
 		'sidebar' => __( 'Sidebar Menu', 'edxstarter' ),
 		'footer'  => __( 'Footer Menu', 'edxstarter' ),
 		'social'  => __( 'Social Menu', 'edxstarter' ),
