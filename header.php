@@ -37,16 +37,16 @@
 		<header id="site-header" role="banner" class="masthead <?php echo is_singular() ? 'site-header featured-image is-singular' : 'is-archive site-header'; ?>">
 
 			<div class="site-header-top">
-				<div class="site-header-top-left">
+				<div class="site-header-top-left menu-social">
 					<!-- Social Nav / Login? -->
 					<?php
 					if ( has_nav_menu( 'social' ) ) {
 						wp_nav_menu(
 							array(
-								'container'      => 'div',
-								'items_wrap'     => '%3$s',
 								'theme_location' => 'social',
 								'depth'          => 1,
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
 							)
 						);
 					}
@@ -54,11 +54,11 @@
 
 					<?php if ( ! is_user_logged_in() ) { ?>
 						<a class="site-admin-link site-login" href="<?php echo esc_url( wp_login_url() ); ?>">
-							Login
+							<?php esc_html_e( 'Login', 'edxstarter' ); ?>
 						</a>
 					<?php } else { ?>
 						<a class="site-admin-link site-logout" href="<?php echo esc_url( wp_logout_url() ); ?>">
-							Logout
+							<?php esc_html_e( 'Logout', 'edxstarter' ); ?>
 						</a>
 					<?php } ?>
 				</div><!-- .site-header-top-left -->
@@ -88,7 +88,7 @@
 				</div><!-- .site-header-top-right -->
 			</div>
 
-			<nav class="site-navigation" aria-label="<?php esc_attr_e( 'Header Menu', 'edxstarter' ); ?>" role="navigation">
+			<nav class="site-navigation header-menu-wrapper" aria-label="<?php esc_attr_e( 'Header Menu', 'edxstarter' ); ?>" role="navigation">
 				<!-- Main Nav -->
 				<ul class="header-menu">
 					<?php
