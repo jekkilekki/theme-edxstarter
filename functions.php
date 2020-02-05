@@ -45,10 +45,10 @@ function edxstarter_theme_support() {
 	);
 
 	// Set content-width.
-	// global $content_width;
-	// if ( ! isset( $content_width ) ) {
-	// 	$content_width = 580;
-	// }
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 640; /* Sidebar: 320px - margin: 40px */
+	}
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -144,20 +144,20 @@ add_action( 'wp_enqueue_scripts', 'edxstarter_register_styles' );
 /**
  * Register and Enqueue Scripts.
  */
-// function edxstarter_register_scripts() {
+function edxstarter_register_scripts() {
 
-// 	$theme_version = wp_get_theme()->get( 'Version' );
+	$theme_version = wp_get_theme()->get( 'Version' );
 
-// 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-// 		wp_enqueue_script( 'comment-reply' );
-// 	}
+	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
-// 	wp_enqueue_script( 'edxstarter-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
-// 	wp_script_add_data( 'edxstarter-js', 'async', true );
+	wp_enqueue_script( 'edxstarter-js', get_template_directory_uri() . '/js/index.js', array(), $theme_version, true );
+	// wp_script_add_data( 'edxstarter-js', 'async', true );
 
-// }
+}
 
-// add_action( 'wp_enqueue_scripts', 'edxstarter_register_scripts' );
+add_action( 'wp_enqueue_scripts', 'edxstarter_register_scripts' );
 
 /**
  * Fix skip link focus in IE11.

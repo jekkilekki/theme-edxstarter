@@ -22,16 +22,16 @@ get_header();
 	<?php
 	if ( have_posts() ) {
 
-		while( have_posts() ) {
+		while ( have_posts() ) {
 
 			the_post();
 			?>
 
 			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-				<div class="container">
+				<div class="container entry-content">
 
-			<?php
+				<?php
 
 				if ( is_singular() ) {
 					the_title( '<h1 class="entry-title">', '</h1>' );
@@ -45,18 +45,20 @@ get_header();
 					the_excerpt();
 				}
 
-			?>
+				?>
 				</div>
 
 			</article>
 
 			<?php
-		}
-	}
+
+		} // endwhile
+	} // endif
+
 	?>
 
 	<div class="pagination">
-				
+
 	<?php
 	the_posts_pagination(
 		array(
@@ -68,7 +70,7 @@ get_header();
 	?>
 
 	</div>
-	
+
 </main>
 
 <?php
