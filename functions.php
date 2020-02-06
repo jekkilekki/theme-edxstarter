@@ -131,7 +131,7 @@ function edxstarter_register_styles() {
 	wp_enqueue_style( 'edxstarter-style', get_stylesheet_uri(), array(), $theme_version );
 
 	/* FontAwesome */
-	wp_enqueue_style( 'edxstarter-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js', array(), $theme_version );
+	wp_enqueue_style( 'edxstarter-fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css', array(), $theme_version );
 
 	/* Google Fonts */
 	wp_enqueue_style( 'edxstarter-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans+Caption|PT+Sans+Narrow:400,700|PT+Sans:400,700|PT+Serif+Caption|PT+Serif:400,400i,700,700i&display=swap', array(), $theme_version );
@@ -184,7 +184,7 @@ add_action( 'wp_print_footer_scripts', 'edxstarter_skip_link_focus_fix' );
 function edxstarter_menus() {
 
 	$locations = array(
-		'main'    => __( 'Main Top Menu', 'edxstarter' ),
+		'header'  => __( 'Header Menu', 'edxstarter' ),
 		'sidebar' => __( 'Sidebar Menu', 'edxstarter' ),
 		'footer'  => __( 'Footer Menu', 'edxstarter' ),
 		'social'  => __( 'Social Menu', 'edxstarter' ),

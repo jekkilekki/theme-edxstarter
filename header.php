@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Twenty_Nineteen
+ * @subpackage EdxStarter
  * @since 1.0.0
  */
 
@@ -34,7 +34,7 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'twentynineteen' ); ?></a>
 
-		<header id="site-header" role="banner" class="masthead <?php echo is_singular() ? 'site-header featured-image is-singular' : 'is-archive site-header'; ?>">
+		<header id="site-header" role="banner" class="site-header <?php echo is_singular() ? 'is-singular' : 'is-archive'; ?>">
 
 			<div class="site-header-top">
 				<div class="site-header-top-left menu-social">
@@ -43,10 +43,16 @@
 					if ( has_nav_menu( 'social' ) ) {
 						wp_nav_menu(
 							array(
-								'container'      => 'div',
-								'items_wrap'     => '%3$s',
-								'theme_location' => 'social',
-								'depth'          => 1,
+								'theme_location'  => 'social',
+								'container'       => 'div',
+								'container_id'    => 'menu-social',
+								'container_class' => 'menu',
+								'menu_id'         => 'menu-social-items',
+								'menu_class'      => 'menu-items',
+								'depth'           => 1,
+								'link_before'     => '<span class="screen-reader-text">',
+								'link_after'      => '</span>',
+								'fallback_cb'     => '',
 							)
 						);
 					}
