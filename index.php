@@ -19,25 +19,49 @@ get_header();
 
 <main id="site-content" class="page">
 
+	<div class="site-content-container">
+
 	<?php
 	if ( have_posts() ) {
+		?>
 
+		<div class="post-content">
+
+		<?php if ( ! is_singular() ) { ?>
+			<h3 class="page-title"><?php esc_html_e( 'Page Title', 'edxstarter' ); ?></h3>
+		<?php } ?>
+
+		<?php
 		while ( have_posts() ) {
 
 			the_post();
 			?>
 
-			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+			<article <?php post_class(); ?> id="entry post-<?php the_ID(); ?>">
 
-				<div class="container entry-content">
+				<?php if ( has_post_thumbnail() ) { ?>
+
+					<a class="post-featured-image-link" href="<?php echo esc_url( get_the_permalink() ); ?>">
+						<div class="post-featured-image" style="background: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>"></div>
+					</a>
+
+				<?php } ?>
+
+				<header class="entry-header">
+
+					<?php
+					if ( is_singular() ) {
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					} else {
+						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
+					}
+					?>
+
+				</header>
+
+				<div class="entry-content">
 
 				<?php
-
-				if ( is_singular() ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				} else {
-					the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
-				}
 
 				if ( is_singular() ) {
 					the_content();
@@ -48,14 +72,27 @@ get_header();
 				?>
 				</div>
 
+				<footer class="entry-footer footer-meta entry-meta">
+					<?php edxstarter_entry_footer(); ?>
+				</footer>
+
 			</article>
 
 			<?php
 
 		} // endwhile
+		?>
+
+		</div><!-- .post-content -->
+
+		<?php
 	} // endif
 
 	?>
+
+	<?php get_sidebar(); ?>
+
+	</div><!-- .site-content-container -->
 
 	<div class="pagination">
 
@@ -74,6 +111,4 @@ get_header();
 </main>
 
 <?php
-get_sidebar();
-
 get_footer();

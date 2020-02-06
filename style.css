@@ -129,6 +129,19 @@ main,
 	overflow: hidden;
 }
 
+main.page {
+	background: rgba(35,35,35,1);
+	background: linear-gradient(90deg, rgba(35,35,35,0.8) 0%, rgba(35,35,35,0.9) 10%, rgba(35,35,35,1) 20%, rgba(35,35,35,1) 80%, rgba(35,35,35,0.9) 90%,rgba(35,35,35,0.8) 100%);
+}
+
+.site-content-container {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-gap: 3rem;
+}
+
 /* Clearing ---------------------------------- */
 .group::after,
 .entry-content::after {
@@ -214,8 +227,6 @@ path {
 /* -------------------------------------------------------------------------- */
 main {
 	display: block;
-	background: rgb(35,35,35);
-background: linear-gradient(90deg, rgba(35,35,35,0.8) 0%, rgba(35,35,35,0.95) 10%, rgba(35,35,35,1) 20%, rgba(35,35,35,1) 80%, rgba(35,35,35,0.95) 90%, rgba(35,35,35,0.8) 100%);
 }
 
 h1,
@@ -1227,6 +1238,8 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	5.  Post: Archive (index.php)
 /* -------------------------------------------------------------------------- */
+
+
 
 /* -------------------------------------------------------------------------- */
 /*	6.  Post: Single (index.php - conditionals)

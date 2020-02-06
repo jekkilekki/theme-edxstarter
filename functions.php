@@ -119,7 +119,7 @@ add_action( 'after_setup_theme', 'edxstarter_theme_support' );
  * REQUIRED FILES
  * Include required files.
  */
-// require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Register and Enqueue Styles.
