@@ -1238,8 +1238,15 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	5.  Post: Archive (index.php)
 /* -------------------------------------------------------------------------- */
-
-
+.page-title {
+	text-transform: uppercase;
+	font-size: 2rem;
+	border-top: 2px solid #6d6d6d;
+	border-bottom: 2px solid #6d6d6d;
+	color: #a1a1a1;
+	letter-spacing: 0.05rem;
+	padding: 0.5rem 2rem 0.25rem;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	6.  Post: Single (index.php - conditionals)
@@ -1248,6 +1255,151 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	7.  Entry Content
 /* -------------------------------------------------------------------------- */
+.entry {
+	clear: both;
+	max-width: 100%;
+	overflow: hidden;
+	background: #303030;
+	margin-bottom: 2rem;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	transition: all 0.5s ease;
+}
+
+.entry:hover {
+	border-color: #5d5d5d;
+	box-shadow: 0px 0px 30px rgba(15,15,15,0.8);
+	background: #363636;
+}
+
+.entry-header,
+.entry-content,
+.entry-footer {
+	padding: 0 2rem;
+}
+
+.entry-title {
+	margin: 1rem -2rem 1rem 0;
+	padding-right: 2rem; 
+}
+
+.entry-title a {
+	color: #eaeaea;
+	font-size: 3rem;
+}
+
+.entry-title a:after {
+	display: none;
+}
+
+.entry-title a:hover,
+.entry-title a:active,
+.entry-title a:focus {
+	text-shadow: 0px 0px 5px rgba(255,0,255,1);
+	color: white;
+}
+
+.entry-title:after {
+	background: white;
+	height: 2px;
+	position: absolute;
+	content: '';
+	bottom: -2px;
+	left: 0;
+	border-radius: 6px;
+	box-shadow: 0px 0px 15px rgba(255,0,255,1);
+	transition: width 0.5s ease;
+	width: 0;
+}
+
+.entry-title:hover:after {
+	width: 100%;
+}
+
+.entry-header {
+	border-top: 4px solid #cf00ff;
+}
+
+.post-featured-image {
+	text-align: center;
+	height: 260px;
+	width: 100%;
+	background-size: cover!important;
+	background-position: center!important;
+	transition: all 0.5s ease;
+	filter: sepia(1) hue-rotate(230deg);
+}
+
+.entry:hover .post-featured-image {
+	filter: sepia(0);
+}
+
+.entry .published.original-date {
+	display: none;
+}
+
+.entry-footer {
+	margin: 2rem 0;
+}
+
+.entry-meta {
+	font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.25;
+}
+
+.entry-meta a {
+	color: #a1a1a1;
+}
+
+.entry-meta .cat-links a,
+.entry-meta .cat-links {
+	color: #cf00ff;
+}
+
+.entry-meta a:after {
+	display: none;
+}
+
+.entry-meta a:hover:after {
+	display: block;
+	background: #a1a1a1;
+}
+
+.entry-meta > span {
+	padding: 0 1rem 0 0;
+	color: #5d5d5d;
+}
+
+.entry-meta .fas {
+	margin-right: 5px;
+	font-size: 0.9em;
+	/* opacity: 0.5; */
+}
+
+.entry-meta .author-avatar {
+	position: absolute;
+	right: -1rem;
+	bottom: -2rem;
+	z-index: 10;
+}
+
+.entry-meta .author-avatar:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	display: block;
+	transition: all 0.5s ease;
+	border-top: 96px solid #303030;
+	border-right: 96px solid transparent;
+}
+
+.entry:hover .author-avatar:after {
+	border-top-color: #363636;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	8.  Comments

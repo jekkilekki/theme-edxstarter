@@ -14,7 +14,7 @@ if ( ! function_exists( 'edxstarter_posted_on' ) ) :
 	function edxstarter_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date published original-date" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -29,7 +29,7 @@ if ( ! function_exists( 'edxstarter_posted_on' ) ) :
 			'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
 			'<i class="fas fa-stopwatch"></i>',
 			esc_url( get_permalink() ),
-			wp_kses_post( $time_string )
+			$time_string // phpcs:ignore
 		);
 	}
 endif;
@@ -93,7 +93,8 @@ if ( ! function_exists( 'edxstarter_entry_footer' ) ) :
 					),
 					get_the_title()
 				),
-				'<span class="edit-link"><i class="fas fa-pencil-alt"></i></span>'
+				'<span class="edit-link"><i class="fas fa-pencil-alt"></i>',
+				'</span>'
 			);
 
 			echo '<br />';
@@ -111,16 +112,16 @@ if ( ! function_exists( 'edxstarter_entry_footer' ) ) :
 			}
 
 			/* translators: Used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'edxstarter' ) );
-			if ( $tags_list ) {
-				printf(
-					/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of tags. */
-					'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
-					'<i class="fas fa-tag"></i>',
-					__( 'Tags:', 'edxstarter' ),
-					$tags_list
-				); // WPCS: XSS OK.
-			}
+			// $tags_list = get_the_tag_list( '', __( ', ', 'edxstarter' ) );
+			// if ( $tags_list ) {
+			// 	printf(
+			// 		/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of tags. */
+			// 		'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+			// 		'<i class="fas fa-tag"></i>',
+			// 		__( 'Tags:', 'edxstarter' ),
+			// 		$tags_list
+			// 	); // WPCS: XSS OK.
+			// }
 
 			// Posted on.
 			edxstarter_posted_on();

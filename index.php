@@ -37,7 +37,7 @@ get_header();
 			the_post();
 			?>
 
-			<article <?php post_class(); ?> id="entry post-<?php the_ID(); ?>">
+			<article <?php post_class( 'entry' ); ?> id="post-<?php the_ID(); ?>">
 
 				<?php if ( has_post_thumbnail() ) { ?>
 
