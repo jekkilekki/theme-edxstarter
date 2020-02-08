@@ -129,7 +129,8 @@ main,
 	overflow: hidden;
 }
 
-main.page {
+main.page,
+.site-footer.page {
 	background: rgba(35,35,35,1);
 	background: linear-gradient(90deg, rgba(35,35,35,0.8) 0%, rgba(35,35,35,0.9) 10%, rgba(35,35,35,1) 20%, rgba(35,35,35,1) 80%, rgba(35,35,35,0.9) 90%,rgba(35,35,35,0.8) 100%);
 }
@@ -1412,6 +1413,84 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	9.  Site Pagination
 /* -------------------------------------------------------------------------- */
+.pagination {
+	background: #303030;
+	text-align: center;
+	height: 6rem;
+	border-radius: 5px;
+	/* border: 1px solid transparent; */
+	transition: all 0.5s ease;
+	width: 100%;
+}
+
+.pagination:hover {
+	background: #363636;
+}
+
+.pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination .page-numbers {
+	font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+	font-size: 2.4rem;
+	text-align: center;
+	padding-top: 1.8rem;
+	width: 5rem;
+	height: 6rem;
+	display: inline-block;
+	border-left: 0.5px solid #232323;
+	border-right: 0.5px solid #232323;
+}
+
+.pagination .dots {
+	border: none;
+}
+
+.pagination a:after {
+	display: none;
+}
+
+.pagination .current {
+	background: #232323;
+}
+
+.pagination .next {
+	position: absolute;
+	right: 0;
+	padding-top: 1.5rem;
+	font-size: 3rem;
+}
+
+.pagination .prev {
+	left: 0;
+	position: absolute;
+	padding-top: 1.5rem;
+	font-size: 3rem;
+}
+/*
+.pagination a.page-numbers {
+	border-left: 1px solid #232323;
+	border-right: 1px solid #232323;
+	height: 6rem;
+	width: 5rem!important;
+}
+
+.pagination a.page-numbers:hover {
+	background: #232323;
+}
+
+
+
+.pagination .current {
+	background: #232323;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 4rem;
+} */
 
 /* -------------------------------------------------------------------------- */
 /*	10. Error 404 / Search
@@ -1603,3 +1682,85 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	12. Site Footer
 /* -------------------------------------------------------------------------- */
+.site-footer .widget {
+	margin-bottom: 2rem;
+}
+
+.site-footer .widget-content {
+	columns: 4 auto;
+}
+
+.site-footer .widget-title,
+.site-footer .widgettitle {
+	column-span: all;
+}
+
+.site-footer .widget.widget_calendar table,
+.site-footer select,
+.site-footer .search-form {
+	column-span: 2;
+	column-span: all;
+}
+
+/* Colophon */
+.colophon {
+	background: black;
+	background-size: contain!important;
+	background-position: center!important;
+	background-repeat: no-repeat!important;
+	border-bottom: 5px solid black;
+	text-align: center;
+	padding: 9rem 0 3rem;
+	font-size: 1.6rem;
+}
+
+.colophon:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(15,15,15,0.9);
+}
+
+.colophon-content {
+	z-index: 1;
+}
+
+.colophon .social-menu .menu-items {
+	text-align: center!important;
+	font-size: 2rem;
+	margin: -0.5rem 0 2rem;
+}
+
+.colophon a:not(.to-the-top) {
+	color: #6d6d6d;
+}
+
+.colophon a:after {
+	display: none;
+}
+
+.colophon .footer-credits {
+	margin: 4rem 0 0.5rem;
+}
+
+.colophon .footer-credits span:first-child:after,
+.colophon .footer-menu li:after {
+	content: '|';
+	margin: 0 0.5rem;
+}
+
+.colophon .footer-menu li:last-child:after {
+	display: none;
+}
+
+.colophon .footer-menu li {
+	display: inline-block;
+}
+
+.colophon .to-the-top {
+	display: block;
+	margin-top: 1rem;
+}
