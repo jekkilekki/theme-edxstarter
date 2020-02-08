@@ -1841,6 +1841,13 @@ body.page .entry-title:after {
 	border-color: #d5d5d5;
 }
 
+.single .sidebar table,
+.single .sidebar th,
+.single .sidebar tr,
+.single .sidebar td {
+	border-color: #d5d5d5;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	12. Site Footer
 /* -------------------------------------------------------------------------- */
