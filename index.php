@@ -50,21 +50,30 @@ get_header();
 				<header class="entry-header">
 
 					<?php
-					if ( is_singular() ) {
+					if ( is_single() ) {
 						?>
 
 						<div class="entry-meta">
-							<?php edxstarter_posted_by(); ?>
-							<?php edxstarter_posted_on(); ?>
+							<?php edxstarter_single_top_meta(); ?>
 						</div>
 
-						<?php 
+						<?php
 						the_title( '<h1 class="entry-title">', '</h1>' );
 
 						if ( has_excerpt() ) {
-							the_excerpt();
+							?>
+							<div class="entry-intro">
+								<?php the_excerpt(); ?>
+							</div>
+							<?php
 						}
+						?>
 
+						<hr class="post-divider" />
+
+						<?php
+					} elseif ( is_singular() ) {
+						the_title( '<h1 class="entry-title">', '</h1>' );
 					} else {
 						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
 					}
@@ -86,7 +95,12 @@ get_header();
 				</div>
 
 				<footer class="entry-footer footer-meta entry-meta">
+
+					<?php if ( is_single() ) { ?>
+						<hr class="post-divider" />'
+					<?php } ?>
 					<?php edxstarter_entry_footer(); ?>
+
 				</footer>
 
 			</article>

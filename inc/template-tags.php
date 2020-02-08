@@ -160,7 +160,9 @@ if ( ! function_exists( 'edxstarter_sidebar_meta' ) ) :
 	function edxstarter_sidebar_meta() {
 
 		// Posted by.
+		echo '<span class="pre-byline">' . esc_html__( 'Written by', 'edxstarter' ) . '</span><br />';
 		edxstarter_posted_by();
+		echo '<br />';
 
 		// Edit post link.
 		edit_post_link(
@@ -190,3 +192,24 @@ if ( ! function_exists( 'edxstarter_sidebar_meta' ) ) :
 	}
 
 endif;
+
+/**
+ * Meta for the top of Single Posts.
+ */
+function edxstarter_single_top_meta() {
+
+	/* translators: Used between list items, there is a space after the comma. */
+	$categories_list = get_the_category_list( __( ', ', 'edxstarter' ) );
+	if ( $categories_list ) {
+		printf(
+			/* translators: 1: SVG icon. 2: Posted in label, only visible to screen readers. 3: List of categories. */
+			'<span class="cat-links">%1$s<span class="screen-reader-text">%2$s</span>%3$s</span>',
+			'<i class="fas fa-archive"></i>',
+			__( 'Posted in', 'edxstarter' ),
+			$categories_list
+		); // WPCS: XSS OK.
+	}
+
+	edxstarter_posted_on();
+
+}
