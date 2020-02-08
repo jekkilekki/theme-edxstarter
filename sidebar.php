@@ -11,6 +11,11 @@
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<aside id="sidebar" class="sidebar widget-area" role="complementary">
+		<?php
+		if ( is_singular() ) {
+			edxstarter_sidebar_meta();
+		}
+		?>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</aside><!-- .sidebar .widget-area -->
 <?php endif; ?>

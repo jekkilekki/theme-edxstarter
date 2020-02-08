@@ -259,3 +259,14 @@ function edxstarter_sidebar_registration() {
 }
 
 add_action( 'widgets_init', 'edxstarter_sidebar_registration' );
+
+/**
+ * Change Customizer Setting for Custom Header
+ *
+ * @param Object $wp_customize The Customizer Object where we will change our settings.
+ */
+function edxstarter_customizer( $wp_customize ) {
+	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Footer Image', 'edxstarter' );
+	// $wp_customize->get_setting( 'header_image' )->label = esc_html__( 'Footer Image', 'edxstarter' );
+}
+add_action( 'customize_register', 'edxstarter_customizer' );

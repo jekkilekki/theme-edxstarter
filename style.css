@@ -22,8 +22,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	3. 	Helper Classes (Screen Reader Text)
 	4. 	Site Header
 	5.  Post: Archive (index.php)
-	6.  Post: Single (index.php - conditionals)
-	7.  Entry Content
+	6.  Entry Content
+	7.  Post: Single (index.php - conditionals)
 	8.  Comments
 	9.  Site Pagination
 	10. Error 404 / Search
@@ -1262,11 +1262,7 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	6.  Post: Single (index.php - conditionals)
-/* -------------------------------------------------------------------------- */
-
-/* -------------------------------------------------------------------------- */
-/*	7.  Entry Content
+/*	6.  Entry Content
 /* -------------------------------------------------------------------------- */
 .entry {
 	clear: both;
@@ -1415,6 +1411,61 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
+/*	7.  Post: Single (index.php - conditionals)
+/* -------------------------------------------------------------------------- */
+.single .page {
+	padding-top: 3.5rem;
+}
+
+.single .post-content {
+	background: white;
+	color: #5d5d5d;
+	margin: 0;
+	border-radius: 10px 0 0 0;
+}
+
+.single .entry {
+	background: white;
+  border-radius: 0;
+  border: 0;
+}
+
+.single .entry:hover {
+	box-shadow: none;
+}
+
+.single .post-featured-image {
+	height: 400px;
+	filter: sepia(0) hue-rotate(0);
+}
+
+.single img {
+	filter: sepia(0) hue-rotate(0)!important;
+}
+
+.single .post-title {
+	color: #3d3d3d;
+}
+
+.single .sidebar {
+	background: #eaeaea;
+	color: #5d5d5d;
+	padding: 2rem;
+	border-radius: 0 10px 0 0;
+}
+
+.single .site-footer {
+	padding-top: 0;
+}
+
+.single #sidebar-footer {
+	background: #303030;
+	padding: 0 2rem 2rem 2rem;
+	border-radius: 0 0 10px 10px;
+	margin-bottom: 5rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*	8.  Comments
 /* -------------------------------------------------------------------------- */
 
@@ -1479,26 +1530,6 @@ th {
 	padding-top: 1.5rem;
 	font-size: 3rem;
 }
-/*
-.pagination a.page-numbers {
-	border-left: 1px solid #232323;
-	border-right: 1px solid #232323;
-	height: 6rem;
-	width: 5rem!important;
-}
-
-.pagination a.page-numbers:hover {
-	background: #232323;
-}
-
-
-
-.pagination .current {
-	background: #232323;
-	width: 4rem;
-	height: 4rem;
-	border-radius: 4rem;
-} */
 
 /* -------------------------------------------------------------------------- */
 /*	10. Error 404 / Search

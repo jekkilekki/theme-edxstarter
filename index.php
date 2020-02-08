@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="page">
+<main id="site-content" class="page <?php echo is_singular() ? 'is-singular' : 'is-archive'; ?>">
 
 	<div class="site-content-container">
 
@@ -52,6 +52,10 @@ get_header();
 					<?php
 					if ( is_singular() ) {
 						the_title( '<h1 class="entry-title">', '</h1>' );
+
+						edxstarter_posted_by();
+
+						edxstarter_posted_on();
 					} else {
 						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
 					}
