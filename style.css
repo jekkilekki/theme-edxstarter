@@ -139,8 +139,12 @@ main.page,
 	max-width: 1000px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 70% 30%;
-	grid-gap: 3rem;
+	grid-template-columns: 70% 300px;
+	/* grid-gap: 3rem; */
+}
+
+.post-content {
+	margin-right: 3rem;
 }
 
 /* Clearing ---------------------------------- */
@@ -220,7 +224,7 @@ path {
 	width: 1000px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	padding: 5rem;
+	/* padding: 5rem; */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -646,6 +650,10 @@ object {
 
 img {
 	filter: grayscale(1);
+}
+
+img.wp-smiley, img.emoji {
+	filter: grayscale(0);
 }
 
 figcaption,
@@ -1162,25 +1170,25 @@ th {
 }
 
 /* Social Navigation */
-#menu-social {}
+.social-menu {}
 
-#menu-social ul {
+.social-menu ul {
 	list-style: none;
 	margin: 0;
 	text-align: left;
 }
 
-#menu-social ul li {
+.social-menu ul li {
 	display: inline-block;
 	position: relative;
 	margin: 0;
 }
 
-#menu-social li a::after {
+.social-menu li a::after {
 	display: none;
 }
 
-#menu-social li a::before {
+.social-menu li a::before {
 	content: '\f0c0';
 	display: inline-block;
 	padding: 0 5px;
@@ -1191,54 +1199,54 @@ th {
 	-webkit-font-smoothing: antialiased;
 }
 
-#menu-social li a:hover::before {
+.social-menu li a:hover::before {
 	color: white;
 }
 
-#menu-social li a[href*="facebook.com"]::before { content: '\f09a'; }
-#menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
-#menu-social li a[href*="github.com"]::before { content: '\f09b'; }
-#menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
-#menu-social li a[href*="wordpress.com"]::before,
-#menu-social li a[href*="wordpress.org"]::before { content: '\f19a'; }
-#menu-social li a[href*="tumblr.com"]::before { content: '\f173'; }
-#menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
-#menu-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
-#menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
-#menu-social li a[href*="vimeo.com"]::before { content: '\f194'; }
-#menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
-#menu-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
-#menu-social li a[href*="flickr.com"]::before { content: '\f16e'; }
-#menu-social li a[href*="bitbucket.com"]::before { content: '\f171'; }
-#menu-social li a[href*="digg.com"]::before { content: '\f1a6'; }
-#menu-social li a[href*="reddit.com"]::before { content: '\f1a1'; }
-#menu-social li a[href*="codepen.io"]::before { content: '\f1cb'; }
-#menu-social li a[href*="behance.com"]::before { content: '\f1b4'; }
-#menu-social li a[href*="slideshare.net"]::before { content: '\f1e7'; }
-#menu-social li a[href*="/feed"]::before { content: '\f413'; }
-#menu-social li a[href*="subscribe"]::before { content: '\f410'; }
+.social-menu li a[href*="facebook.com"]::before { content: '\f09a'; }
+.social-menu li a[href*="twitter.com"]::before { content: '\f099'; }
+.social-menu li a[href*="github.com"]::before { content: '\f09b'; }
+.social-menu li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.social-menu li a[href*="wordpress.com"]::before,
+.social-menu li a[href*="wordpress.org"]::before { content: '\f19a'; }
+.social-menu li a[href*="tumblr.com"]::before { content: '\f173'; }
+.social-menu li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.social-menu li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.social-menu li a[href*="instagram.com"]::before { content: '\f16d'; }
+.social-menu li a[href*="vimeo.com"]::before { content: '\f194'; }
+.social-menu li a[href*="youtube.com"]::before { content: '\f167'; }
+.social-menu li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+.social-menu li a[href*="flickr.com"]::before { content: '\f16e'; }
+.social-menu li a[href*="bitbucket.com"]::before { content: '\f171'; }
+.social-menu li a[href*="digg.com"]::before { content: '\f1a6'; }
+.social-menu li a[href*="reddit.com"]::before { content: '\f1a1'; }
+.social-menu li a[href*="codepen.io"]::before { content: '\f1cb'; }
+.social-menu li a[href*="behance.com"]::before { content: '\f1b4'; }
+.social-menu li a[href*="slideshare.net"]::before { content: '\f1e7'; }
+.social-menu li a[href*="/feed"]::before { content: '\f413'; }
+.social-menu li a[href*="subscribe"]::before { content: '\f410'; }
 
 /* Hover colors here */
-#menu-social li a[href*="facebook.com"]:hover::before { text-shadow: 0px 0px 15px #3b5998; }
-#menu-social li a[href*="twitter.com"]:hover::before { text-shadow: 0px 0px 15px #33ccff; }
-#menu-social li a[href*="github.com"]:hover::before { text-shadow: 0px 0px 15px #171515; }
-#menu-social li a[href*="linkedin.com"]:hover::before { text-shadow: 0px 0px 15px #0e76a8; }
-#menu-social li a[href*="wordpress.com"]:hover::before,
-#menu-social li a[href*="wordpress.org"]:hover::before { text-shadow: 0px 0px 15px #21759b; }
-#menu-social li a[href*="tumblr.com"]:hover::before { text-shadow: 0px 0px 15px #34526f; }
-#menu-social li a[href*="plus.google.com"]:hover::before { text-shadow: 0px 0px 15px #dd4b39; }
-#menu-social li a[href*="dribbble.com"]:hover::before { text-shadow: 0px 0px 15px #ea4c89; }
-#menu-social li a[href*="instagram.com"]:hover::before { text-shadow: 0px 0px 15px #3f729b; }
-#menu-social li a[href*="vimeo.com"]:hover::before { text-shadow: 0px 0px 15px #1AB7EA; }
-#menu-social li a[href*="youtube.com"]:hover::before { text-shadow: 0px 0px 15px #c4302b; }
-#menu-social li a[href*="pinterest.com"]:hover::before { text-shadow: 0px 0px 15px #c8232c; }
-#menu-social li a[href*="flickr.com"]:hover::before { text-shadow: 0px 0px 15px #ff0084; }
-#menu-social li a[href*="bitbucket.com"]:hover::before { text-shadow: 0px 0px 15px #1f5182; }
-#menu-social li a[href*="digg.com"]:hover::before { text-shadow: 0px 0px 15px #2169A8; }
-#menu-social li a[href*="reddit.com"]:hover::before { text-shadow: 0px 0px 15px #fff; }
-#menu-social li a[href*="codepen.io"]:hover::before { text-shadow: 0px 0px 15px #fff; }
-#menu-social li a[href*="behance.com"]:hover::before { text-shadow: 0px 0px 15px #005cff; }
-#menu-social li a[href*="slideshare.net"]:hover::before { text-shadow: 0px 0px 15px #00a8aa; }
+.social-menu li a[href*="facebook.com"]:hover::before { text-shadow: 0px 0px 15px #3b5998; }
+.social-menu li a[href*="twitter.com"]:hover::before { text-shadow: 0px 0px 15px #33ccff; }
+.social-menu li a[href*="github.com"]:hover::before { text-shadow: 0px 0px 15px #171515; }
+.social-menu li a[href*="linkedin.com"]:hover::before { text-shadow: 0px 0px 15px #0e76a8; }
+.social-menu li a[href*="wordpress.com"]:hover::before,
+.social-menu li a[href*="wordpress.org"]:hover::before { text-shadow: 0px 0px 15px #21759b; }
+.social-menu li a[href*="tumblr.com"]:hover::before { text-shadow: 0px 0px 15px #34526f; }
+.social-menu li a[href*="plus.google.com"]:hover::before { text-shadow: 0px 0px 15px #dd4b39; }
+.social-menu li a[href*="dribbble.com"]:hover::before { text-shadow: 0px 0px 15px #ea4c89; }
+.social-menu li a[href*="instagram.com"]:hover::before { text-shadow: 0px 0px 15px #3f729b; }
+.social-menu li a[href*="vimeo.com"]:hover::before { text-shadow: 0px 0px 15px #1AB7EA; }
+.social-menu li a[href*="youtube.com"]:hover::before { text-shadow: 0px 0px 15px #c4302b; }
+.social-menu li a[href*="pinterest.com"]:hover::before { text-shadow: 0px 0px 15px #c8232c; }
+.social-menu li a[href*="flickr.com"]:hover::before { text-shadow: 0px 0px 15px #ff0084; }
+.social-menu li a[href*="bitbucket.com"]:hover::before { text-shadow: 0px 0px 15px #1f5182; }
+.social-menu li a[href*="digg.com"]:hover::before { text-shadow: 0px 0px 15px #2169A8; }
+.social-menu li a[href*="reddit.com"]:hover::before { text-shadow: 0px 0px 15px #fff; }
+.social-menu li a[href*="codepen.io"]:hover::before { text-shadow: 0px 0px 15px #fff; }
+.social-menu li a[href*="behance.com"]:hover::before { text-shadow: 0px 0px 15px #005cff; }
+.social-menu li a[href*="slideshare.net"]:hover::before { text-shadow: 0px 0px 15px #00a8aa; }
 
 /* -------------------------------------------------------------------------- */
 /*	5.  Post: Archive (index.php)
@@ -1497,7 +1505,7 @@ th {
 /* -------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------- */
-/*	11. Widgets
+/*  11. Widgets
 /* -------------------------------------------------------------------------- */
 #sidebar {
 	max-width: 100%;

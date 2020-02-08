@@ -25,6 +25,7 @@ $has_social_menu = has_nav_menu( 'social' );
 						?>
 
 						<aside id="sidebar-footer" class="container widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Footer Widgets', 'edxstarter' ); ?>">
+
 							<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 						</aside><!-- #sidebar-footer -->
 
