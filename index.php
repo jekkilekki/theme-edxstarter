@@ -51,11 +51,20 @@ get_header();
 
 					<?php
 					if ( is_singular() ) {
+						?>
+
+						<div class="entry-meta">
+							<?php edxstarter_posted_by(); ?>
+							<?php edxstarter_posted_on(); ?>
+						</div>
+
+						<?php 
 						the_title( '<h1 class="entry-title">', '</h1>' );
 
-						edxstarter_posted_by();
+						if ( has_excerpt() ) {
+							the_excerpt();
+						}
 
-						edxstarter_posted_on();
 					} else {
 						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
 					}

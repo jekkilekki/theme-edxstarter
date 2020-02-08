@@ -1417,6 +1417,10 @@ th {
 	padding-top: 3.5rem;
 }
 
+.single .site-content-container {
+	grid-template-columns: 75% 250px;
+}
+
 .single .post-content {
 	background: white;
 	color: #5d5d5d;
@@ -1427,11 +1431,23 @@ th {
 .single .entry {
 	background: white;
   border-radius: 0;
-  border: 0;
+	border: 0;
 }
 
 .single .entry:hover {
 	box-shadow: none;
+}
+
+.single .entry-header,
+.single .entry-content,
+.single .entry-footer {
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+}
+
+.single .entry-header {
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
 }
 
 .single .post-featured-image {
