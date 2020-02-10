@@ -15,6 +15,24 @@
 		if ( is_single() ) {
 			edxstarter_entry_sidebar();
 		}
+
+		if ( has_nav_menu( 'sidebar' ) ) {
+			?>
+				<div class="widget">
+					<h2 class="widget-title"><?php esc_html_e( 'Site Menu', 'edxstarter' ); ?></h2>
+					<div class="widget-content">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'sidebar',
+							'depth'          => 1,
+						)
+					)
+					?>
+					</div>
+				</div>
+			<?php
+		}
 		?>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</aside><!-- .sidebar .widget-area -->

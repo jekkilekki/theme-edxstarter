@@ -28,7 +28,8 @@ get_header();
 		<div class="post-content">
 
 		<?php if ( ! is_singular() ) { ?>
-			<h3 class="page-title"><?php esc_html_e( 'Page Title', 'edxstarter' ); ?></h3>
+			<h3 class="page-title"><?php the_archive_title(); ?></h3>
+			<p class="page-description"><?php the_archive_description(); ?></p>
 		<?php } ?>
 
 		<?php

@@ -146,6 +146,23 @@ footer.site-footer {
 	margin-right: 3rem;
 }
 
+/* Site Logo */
+.wp-custom-logo .site-identity {
+	display: none;
+}
+
+.wp-custom-logo .custom-logo {
+	max-width: 300px;
+	margin: -2rem auto;
+	filter: sepia(0) hue-rotate(0) drop-shadow(0);
+	transition: all 0.5s ease;
+}
+
+.wp-custom-logo .custom-logo:hover {
+	/* box-shadow: 0px 0px 15px rgba(255,0,255,1); */
+	filter: drop-shadow( 0px 0px 15px rgba(255,0,255,1) );
+}
+
 /* Clearing ---------------------------------- */
 .group::after,
 .entry-content::after {
@@ -1257,6 +1274,10 @@ th {
 	padding: 0.5rem 2rem 0.25rem;
 }
 
+.page-title .color-accent {
+	color: #cf00ff;
+}
+
 /* -------------------------------------------------------------------------- */
 /*	6.  Entry Content
 /* -------------------------------------------------------------------------- */
@@ -1429,7 +1450,11 @@ body.page main.page {
 .single .entry table,
 .single .entry tr,
 .single .entry th,
-.single .entry td {
+.single .entry td,
+.single .sidebar table,
+.single .sidebar tr,
+.single .sidebar th,
+.single .sidebar td {
 	border-color: #d5d5d5;
 }
 

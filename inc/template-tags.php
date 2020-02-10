@@ -210,3 +210,37 @@ function edxstarter_entry_sidebar() {
 	</div>
 	<?php
 }
+
+/**
+ * Archives
+ */
+/**
+ * Filters the archive title and styles the word before the first colon.
+ *
+ * @param string $title Current archive title.
+ *
+ * @return string $title Current archive title.
+ */
+function edxstarter_get_the_archive_title( $title ) {
+
+	$regex = apply_filters(
+		'edxstarter_get_the_archive_title_regex',
+		array(
+			'pattern'     => '/(\A[^\:]+\:)/',
+			'replacement' => '<span class="color-accent">$1</span>',
+		)
+	);
+
+	if ( empty( $regex ) ) {
+		return $title;
+	}
+
+	if ( is_home() ) {
+		return get_bloginfo( 'name' );
+	}
+
+	return preg_replace( $regex['pattern'], $regex['replacement'], $title );
+
+}
+
+add_filter( 'get_the_archive_title', 'edxstarter_get_the_archive_title' );
