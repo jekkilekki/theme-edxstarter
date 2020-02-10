@@ -26,8 +26,8 @@ $has_social_menu = has_nav_menu( 'social' );
 
 				</div>
 
-				<div class="colophon">
-					<div class="container">
+				<div class="colophon" style="background: black url('<?php esc_url( header_image() ); ?>')">
+					<div class="container colophon-content">
 
 				<?php
 
@@ -39,7 +39,7 @@ $has_social_menu = has_nav_menu( 'social' );
 				if ( $has_footer_menu || $has_social_menu ) {
 					?>
 					<div class="footer-top<?php echo $footer_top_classes; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
-						
+
 						<?php if ( $has_social_menu ) { ?>
 
 							<nav aria-label="<?php esc_attr_e( 'Social links', 'twentytwenty' ); ?>" class="footer-social-wrapper">
@@ -78,7 +78,7 @@ $has_social_menu = has_nav_menu( 'social' );
 
 						<span class="footer-copyright">&copy;
 							<?php
-							echo date_i18n(
+							echo date_i18n( // phpcs:ignore
 								/* translators: Copyright date format, see https://secure.php.net/date */
 								_x( 'Y', 'copyright date format', 'edxstarter' )
 							);
@@ -88,7 +88,7 @@ $has_social_menu = has_nav_menu( 'social' );
 
 						<span class="powered-by-wordpress">
 							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edxstarter' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'edxstarter' ); ?>
+								<?php esc_html_e( 'Powered by WordPress', 'edxstarter' ); ?>
 							</a>
 						</span><!-- .powered-by-wordpress -->
 
@@ -119,7 +119,7 @@ $has_social_menu = has_nav_menu( 'social' );
 						<span class="to-the-top-long">
 							<?php
 							/* translators: %s: HTML character for up arrow */
-							printf( __( 'To the top %s', 'edxstarter' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+							printf( __( 'To the top %s', 'edxstarter' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' ); // phpcs:ignore
 							?>
 						</span><!-- .to-the-top-long -->
 					</a><!-- .to-the-top -->

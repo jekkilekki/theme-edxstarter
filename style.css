@@ -1672,6 +1672,23 @@ th {
 	text-align: center;
 	padding: 9rem 0 3rem;
 	font-size: 1.6rem;
+	background-size: contain!important;
+	background-position: center!important;
+	background-repeat: no-repeat!important;
+}
+
+.colophon:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(15,15,15,0.9);
+}
+
+.colophon-content {
+	z-index: 1;
 }
 
 .colophon #menu-social .menu-items {

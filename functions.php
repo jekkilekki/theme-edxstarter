@@ -44,6 +44,17 @@ function edxstarter_theme_support() {
 		)
 	);
 
+	// Custom Header (Footer) image.
+	$args = array(
+		'default-image'      => get_template_directory_uri() . 'img/default-image.jpg',
+		'default-text-color' => '000',
+		'width'              => 1000,
+		'height'             => 500,
+		'flex-width'         => true,
+		'flex-height'        => true,
+	);
+	add_theme_support( 'custom-header', $args );
+
 	// Set content-width.
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
@@ -61,7 +72,7 @@ function edxstarter_theme_support() {
 	set_post_thumbnail_size( 1200, 9999 );
 
 	// Add custom image size used in Cover Template.
-	// add_image_size( 'edxstarter-fullscreen', 1980, 9999 );
+	// add_image_size( 'edxstarter-fullscreen', 1980, 9999 );.
 
 	add_theme_support(
 		'custom-logo',
@@ -153,8 +164,7 @@ function edxstarter_register_scripts() {
 	}
 
 	wp_enqueue_script( 'edxstarter-js', get_template_directory_uri() . '/js/index.js', array(), $theme_version, true );
-	// wp_script_add_data( 'edxstarter-js', 'async', true );
-
+	// wp_script_add_data( 'edxstarter-js', 'async', true );.
 }
 
 add_action( 'wp_enqueue_scripts', 'edxstarter_register_scripts' );
@@ -249,3 +259,14 @@ function edxstarter_sidebar_registration() {
 }
 
 add_action( 'widgets_init', 'edxstarter_sidebar_registration' );
+
+/**
+ * Change Customizer Settings for Custom Header / Footer.
+ *
+ * @param Object $wp_customize The WordPress Customizer Object.
+ */
+function edxstarter_customizer( $wp_customize ) {
+	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Footer Image', 'edxstarter' );
+	$wp_customize->get_section( 'header_image' )->description = esc_html__( '***Note: This says "header" but actually controls the footer image.', 'edxstarter' );
+}
+add_action( 'customize_register', 'edxstarter_customizer' );
