@@ -22,8 +22,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	3. 	Helper Classes (Screen Reader Text)
 	4. 	Site Header
 	5.  Post: Archive (index.php)
-	6.  Post: Single (index.php - conditionals)
-	7.  Entry Content
+	6.  Entry Content
+	7.  Post: Single (index.php - conditionals)
 	8.  Comments
 	9.  Site Pagination
 	10. Error 404 / Search
@@ -139,8 +139,11 @@ footer.site-footer {
 	max-width: 1000px;
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 70% 30%;
-	grid-gap: 3rem;
+	grid-template-columns: 70% 300px;
+}
+
+.post-content {
+	margin-right: 3rem;
 }
 
 /* Clearing ---------------------------------- */
@@ -1255,11 +1258,7 @@ th {
 }
 
 /* -------------------------------------------------------------------------- */
-/*	6.  Post: Single (index.php - conditionals)
-/* -------------------------------------------------------------------------- */
-
-/* -------------------------------------------------------------------------- */
-/*	7.  Entry Content
+/*	6.  Entry Content
 /* -------------------------------------------------------------------------- */
 .entry {
 	clear: both;
@@ -1405,6 +1404,139 @@ th {
 
 .entry:hover .author-avatar:after {
 	border-top-color: #363636;
+}
+
+/* -------------------------------------------------------------------------- */
+/*	7.  Post: Single (index.php - conditionals)
+/* -------------------------------------------------------------------------- */
+.single .page,
+body.page main.page {
+	padding-top: 3.5rem;
+}
+
+.single .entry h1,
+.single .entry h2,
+.single .entry h3,
+.single .entry h4,
+.single .entry h5,
+.single .entry h6,
+.single .entry strong,
+.single .entry b,
+.single .entry dt {
+	color: #5d5d5d;
+}
+
+.single .entry table,
+.single .entry tr,
+.single .entry th,
+.single .entry td {
+	border-color: #d5d5d5;
+}
+
+.single .post-content {
+	background: white;
+	color: #5d5d5d;
+	margin: 0;
+	border-radius: 10px 0 0 0;
+}
+
+.single .entry {
+	background: white;
+	border-radius: 0;
+	border: 0;
+}
+
+.single .entry:hover {
+	box-shadow: none;
+}
+
+.single .post-featured-image {
+	height: 400px;
+	filter: sepia(0) hue-rotate(0);
+}
+
+.single img {
+	filter: sepia(0) hue-rotate(0);
+}
+
+.single .entry-header {
+	padding-top: 2rem;
+}
+
+.single .entry-title {
+	font-size: 4rem;
+	color: #5d5d5d;
+}
+
+.single .entry-title:after {
+	display: none;
+}
+
+.single .entry-intro {
+	color: #999999;
+	margin-top: 2rem;
+	font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+}
+
+.single .sidebar {
+	background: #eaeaea;
+	color: #5d5d5d;
+	padding: 2rem;
+	border-radius: 0 10px 0 0;
+}
+
+.single .sidebar .entry-meta {
+	padding: 2rem 0;
+}
+
+.single .sidebar .author-avatar {
+	right: -3rem;
+}
+
+.single .sidebar .author-avatar:after {
+	border-top-color: #eaeaea;
+}
+
+.single .site-footer {
+	padding-top: 0;
+}
+
+.single #sidebar-footer {
+	background: #303030;
+	padding: 0 2rem 2rem 2rem;
+	border-radius: 0 0 10px 10px;
+	margin-bottom: 5rem;
+}
+
+.single #site-footer .container,
+body.page #site-footer .container {
+	padding: 0;
+}
+
+/* Pages */
+body.page .site-content-container {
+	grid-template-columns: 100%;
+}
+
+body.page .post-content {
+	margin-right: 0;
+}
+
+body.page .entry-header {
+	padding: 4rem 4rem 0;
+}
+
+body.page .entry-content {
+	padding: 4rem;
+}
+
+body.page .entry-title {
+	font-size: 4rem;
+}
+
+body.page .entry-title:after {
+	display: none;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1663,6 +1795,35 @@ th {
 /* Tag Cloud Widget */
 .widget.widget_tag_cloud {
 	line-height: 1.2;
+}
+
+/* SINGLE Posts */
+.single .sidebar .widgettitle,
+.single .sidebar .widget-title {
+	border-color: #d5d5d5;
+}
+
+.single .sidebar .widget li:hover,
+.single .sidebar .widget li.active {
+	background: #d5d5d5;
+}
+
+.single .sidebar .widget li a:hover {
+	color: #5d5d5d;
+}
+
+.single .sidebar .widget select,
+.single .sidebar .widget input[type="search"] {
+	background: #d5d5d5;
+}
+
+.single .sidebar .widget input[type="search"] {
+	border: none;
+}
+
+.single .sidebar .widget li.recentcomments,
+.single .sidebar .widget.widget_rss li {
+	border-color: #d5d5d5;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -9,7 +9,7 @@
 
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) : ?>
 	<aside id="sidebar" class="sidebar widget-area" role="complementary">
 		<?php
 		if ( is_single() ) {
