@@ -27,9 +27,11 @@ get_header();
 
 		<div class="post-content">
 
-		<?php if ( ! is_singular() ) { ?>
-			<h3 class="page-title"><?php esc_html_e( 'Page Title', 'edxstarter' ); ?></h3>
-		<?php } ?>
+		<?php
+		if ( ! is_singular() ) {
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+		}
+		?>
 
 		<?php
 		while ( have_posts() ) {

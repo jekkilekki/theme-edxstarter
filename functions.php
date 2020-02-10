@@ -70,6 +70,7 @@ function edxstarter_theme_support() {
 			'width'       => 120,
 			'flex-height' => true,
 			'flex-width'  => true,
+			'header-text' => array( 'site-identity' ),
 		)
 	);
 
@@ -162,7 +163,7 @@ function edxstarter_register_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'edxstarter-js', get_template_directory_uri() . '/js/index.js', array(), $theme_version, true );
+	// wp_enqueue_script( 'edxstarter-js', get_template_directory_uri() . '/js/index.js', array(), $theme_version, true );
 	// wp_script_add_data( 'edxstarter-js', 'async', true );
 
 }
