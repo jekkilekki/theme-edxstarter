@@ -346,11 +346,12 @@ address {
 	opacity: 0.8;
 }
 
-hr {
+hr,
+hr.post-divider {
 	border-style: solid;
 	border-width: 0.1rem 0 0 0;
 	border-color: #3d3d3d;
-	margin: 4rem 0;
+	margin: 2rem 0;
 }
 
 .entry-content hr,

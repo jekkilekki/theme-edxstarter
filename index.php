@@ -50,7 +50,21 @@ get_header();
 				<header class="entry-header">
 
 					<?php
-					if ( is_singular() ) {
+					if ( is_single() ) {
+
+						edxstarter_entry_header();
+						the_title( '<h1 class="entry-title">', '</h1>' );
+
+						if ( has_excerpt() ) {
+							?>
+							<div class="entry-intro">
+								<?php the_excerpt(); ?>
+							</div>
+
+							<hr class="post-divider" />
+							<?php
+						}
+					} elseif ( is_singular() ) {
 						the_title( '<h1 class="entry-title">', '</h1>' );
 					} else {
 						the_title( '<h2 class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
@@ -73,6 +87,11 @@ get_header();
 				</div>
 
 				<footer class="entry-footer footer-meta entry-meta">
+
+					<?php if ( is_single() ) { ?>
+						<hr class="post-divider" />
+					<?php } ?>
+
 					<?php edxstarter_entry_footer(); ?>
 				</footer>
 
