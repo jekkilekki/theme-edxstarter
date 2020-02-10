@@ -14,7 +14,7 @@
 $has_footer_menu = has_nav_menu( 'footer' );
 $has_social_menu = has_nav_menu( 'social' );
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+			<footer id="site-footer" role="contentinfo" class="site-footer">
 
 				<div class="container">
 
@@ -26,7 +26,8 @@ $has_social_menu = has_nav_menu( 'social' );
 
 				</div>
 
-				<div class="container">
+				<div class="colophon">
+					<div class="container">
 
 				<?php
 
@@ -73,9 +74,9 @@ $has_social_menu = has_nav_menu( 'social' );
 
 				<?php } ?>
 
-					<div class="footer-credits">
+					<p class="footer-credits">
 
-						<p class="footer-copyright">&copy;
+						<span class="footer-copyright">&copy;
 							<?php
 							echo date_i18n(
 								/* translators: Copyright date format, see https://secure.php.net/date */
@@ -83,15 +84,15 @@ $has_social_menu = has_nav_menu( 'social' );
 							);
 							?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+						</span><!-- .footer-copyright -->
 
-						<p class="powered-by-wordpress">
+						<span class="powered-by-wordpress">
 							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edxstarter' ) ); ?>">
 								<?php _e( 'Powered by WordPress', 'edxstarter' ); ?>
 							</a>
-						</p><!-- .powered-by-wordpress -->
+						</span><!-- .powered-by-wordpress -->
 
-					</div><!-- .footer-credits -->
+						</p><!-- .footer-credits -->
 
 					<?php if ( $has_footer_menu ) { ?>
 
@@ -123,7 +124,8 @@ $has_social_menu = has_nav_menu( 'social' );
 						</span><!-- .to-the-top-long -->
 					</a><!-- .to-the-top -->
 
-				</div><!-- .container -->
+					</div><!-- .container -->
+				</div><!-- .colophon -->
 
 			</footer><!-- #site-footer -->
 

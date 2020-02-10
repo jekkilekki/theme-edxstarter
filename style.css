@@ -129,7 +129,8 @@ main,
 	overflow: hidden;
 }
 
-main.page {
+main.page,
+footer.site-footer {
 	background: rgba(35,35,35,1);
 	background: linear-gradient(90deg, rgba(35,35,35,0.8) 0%, rgba(35,35,35,0.9) 10%, rgba(35,35,35,1) 20%, rgba(35,35,35,1) 80%, rgba(35,35,35,0.9) 90%,rgba(35,35,35,0.8) 100%);
 }
@@ -1412,6 +1413,69 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	9.  Site Pagination
 /* -------------------------------------------------------------------------- */
+.pagination {
+	background: #303030;
+	text-align: center;
+	height: 6rem;
+	border-radius: 5px;
+	width: 100%;
+	transition: all 0.5s ease;
+}
+
+.pagination:hover {
+	background: #363636;
+}
+
+.pagination .nav-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination .page-numbers {
+	font-family: "PT Sans Caption", Arial, Helvetica, sans-serif;
+	font-size: 2.4rem;
+	text-align: center;
+	padding-top: 1.8rem;
+	width: 5rem;
+	height: 6rem;
+	/* display: inline-block; */
+	border-left: 1px solid #232323;
+	border-right: 1px solid #232323;
+}
+
+.pagination .page-numbers:not(.dots):hover {
+	background: #232323;
+}
+
+.pagination .dots {
+	border: none;
+}
+
+.pagination a:after {
+	display: none;
+}
+
+.pagination .current {
+	background: #232323;
+}
+
+.pagination .next {
+	position: absolute;
+	right: 0;
+	padding-top: 1.5rem;
+	font-size: 3rem;
+	border-right: none;
+}
+
+.pagination .prev {
+	position: absolute;
+	left: 0;
+	padding-top: 1.5rem;
+	font-size: 3rem;
+	border-left: none;
+}
 
 /* -------------------------------------------------------------------------- */
 /*	10. Error 404 / Search
@@ -1603,3 +1667,65 @@ th {
 /* -------------------------------------------------------------------------- */
 /*	12. Site Footer
 /* -------------------------------------------------------------------------- */
+.colophon {
+	background: black;
+	text-align: center;
+	padding: 9rem 0 3rem;
+	font-size: 1.6rem;
+}
+
+.colophon #menu-social .menu-items {
+	text-align: center!important;
+	font-size: 2rem;
+	margin: -0.5rem 0 2rem;
+}
+
+.colophon a:not(.to-the-top) {
+	color: #6d6d6d;
+}
+
+.colophon a:after {
+	display: none;
+}
+
+.colophon a:hover {
+	color: white;
+}
+
+.colophon .to-the-top {
+	display: block;
+	margin-top: 1rem;
+}
+
+.colophon .footer-credits {
+	margin: 4rem 0 0.5rem;
+}
+
+.colophon .footer-credits span:first-child:after,
+.colophon .footer-menu li:after {
+	content: '|';
+	margin: 0 0.5rem;
+}
+
+.colophon .footer-menu li:last-child:after {
+	display: none;
+}
+
+.colophon .footer-menu li {
+	display: inline-block;
+}
+
+.site-footer .widget-content {
+	columns: 4 auto;
+}
+
+.site-footer .widget-title,
+.site-footer .widgettitle {
+	column-span: all;
+}
+
+.site-footer .widget.widget_calendar table,
+.site-footer select,
+.site-footer .search-form {
+	column-span: all;
+}
